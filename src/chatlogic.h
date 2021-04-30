@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 #include "chatgui.h"
 
 // forward declarations
@@ -14,7 +15,7 @@ class ChatLogic
 {
 private:
   // data handles (owned)
-  std::vector<GraphNode*> _nodes;
+  std::vector<std::unique_ptr<GraphNode>> _nodes;
 
   // data handles (not owned)
   GraphNode* _currentNode;
